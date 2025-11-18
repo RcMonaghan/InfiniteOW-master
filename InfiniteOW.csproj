@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\ILMerge.3.0.29\build\ILMerge.props" Condition="Exists('packages\ILMerge.3.0.29\build\ILMerge.props')" />
+  <PropertyGroup>
+     <LangVersion>latest</LangVersion>
+     <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+     <EnableDefaultEmbeddedResourceItems>False</EnableDefaultEmbeddedResourceItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{614AD221-8375-46C9-ADE3-3C2593BF7786}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>InfiniteOW</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <ApplicationVersion>1.1.1.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <RootNamespace></RootNamespace>
+    <ApplicationIcon>imageIcon.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\AccountActions.cs" />
+    <Compile Include="Actions\AreaAttacker.cs" />
+    <Compile Include="Actions\AttackMobs.cs" />
+    <Compile Include="Actions\AutoQuester.cs" />
+    <Compile Include="Actions\BossRaider.cs" />
+    <Compile Include="Actions\Distributor.cs" />
+    <Compile Include="Actions\ItemSwapper.cs" />
+    <Compile Include="Actions\MobAttacker.cs" />
+    <Compile Include="Actions\MobAttackStart.cs" />
+    <Compile Include="Actions\PVP.cs" />
+    <Compile Include="Actions\Raid.cs" />
+    <Compile Include="Actions\SmartAugger.cs" />
+    <Compile Include="Actions\Wilderness.cs" />
+    <Compile Include="Assistance\Delays.cs" />
+    <Compile Include="Actions\EnhancesBuyer.cs" />
+    <Compile Include="Actions\Quest.cs" />
+    <Compile Include="Actions\Start.cs" />
+    <Compile Include="Assistance\ComboboxItem.cs" />
+    <Compile Include="Enums\AttackResults.cs" />
+    <Compile Include="Enums\MobAttackModes.cs" />
+    <Compile Include="Forms\DataGridView\DataGridViewWeekly.cs" />
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\GroupBoxGroups.cs" />
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\MobAttackGroupBoxes\ByDrop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\MobAttackGroupBoxes\ByArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\MobAttackGroupBoxes\ByMob.cs" />
+    <Compile Include="Forms\MainForm\CheckPointsForm.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Potions.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Potions\Misc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\NewSettings\Potions\Damned.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\NewSettings\Potions\Other.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\NewSettings\Potions\Zombie.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\NewSettings\Potions\Candy.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Potions\WL.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills\AffSkills.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills\ClassSkills.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills\FeroSkills.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\MainPanel.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills\MiscSkills.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\NewSettings.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills\PresSkills.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\SettingsSidebar.cs" />
+    <Compile Include="Forms\MainForm\NewSettings\Skills.cs" />
+    <Compile Include="Forms\MainForm\SubmitNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\AccountsComboBox.cs" />
+    <Compile Include="Forms\Support\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enums\QuestCompletion.cs" />
+    <Compile Include="Enums\TalkStatus.cs" />
+    <Compile Include="Forms\MainForm\AutoCast\Tabs\TotemsAndRage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\OwnerTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DataGridView\DataGridViewConditions.cs" />
+    <Compile Include="Forms\Control\DataGridViewProgressColumn.cs" />
+    <Compile Include="Assistance\DescriptionWithValueAttribute.cs" />
+    <Compile Include="Assistance\EmbeddedAssembly.cs" />
+    <Compile Include="Assistance\Functions.cs" />
+    <Compile Include="Assistance\HttpClient.cs" />
+    <Compile Include="Assistance\Properties\Resources.cs" />
+    <Compile Include="Assistance\Properties\Settings.cs" />
+    <Compile Include="Assistance\Settings.cs" />
+    <Compile Include="Assistance\TextSearcher.cs" />
+    <Compile Include="Enums\AfflictionSkill.cs" />
+    <Compile Include="Enums\ClassSkill.cs" />
+    <Compile Include="Enums\FerocitySkill.cs" />
+    <Compile Include="Enums\MiscSkill.cs" />
+    <Compile Include="Enums\MobAttackResult.cs" />
+    <Compile Include="Enums\Potion.cs" />
+    <Compile Include="Enums\PresSkill.cs" />
+    <Compile Include="Forms\AddSerializedRGAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\AutoCast\AutoCastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\AutoCast\Tabs\AutoCastPotions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\AutoCast\Tabs\AutoCastSkills.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\DropsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\InventoryTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\ItemSwapperTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\AuggerTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\DistributorTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\EnhancesTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\BossesTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\CrewsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\StatisticsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\MiscTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\SetRaiderTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\TraderTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\SkillsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\PvPTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\MobsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\LogsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\Tabs\QuestsTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\BottomPanel\BottomPanelTabController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\ChangesLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnterSecWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginWithSess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\CrewData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataGridView\DataGridViewDrops.cs" />
+    <Compile Include="Forms\DataGridView\DataGridViewStatistics.cs" />
+    <Compile Include="Forms\MainForm\Donate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\RGAManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\RanksInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\Discord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\Augger.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\GeneralGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\ItemSwapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\Bosses.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\SetRaider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\PVP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\MobAttacker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\Tabs\Questing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\ShowAccountsWithItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\TopPanel\BaseDataGridView.cs" />
+    <Compile Include="Forms\MainForm\Settings\EditSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\RemoveProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Settings\CreateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Control\GroupBoxQuest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\RequestFeature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\SelectByNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\SubmitBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Objects\Accounts\StorageAccountInfo.cs" />
+    <Compile Include="Objects\AjaxRoom.cs" />
+    <Compile Include="Objects\Camp.cs" />
+    <Compile Include="Objects\Crew.cs" />
+    <Compile Include="Objects\ItemActivation.cs" />
+    <Compile Include="Objects\Raidaccount.cs" />
+    <Compile Include="Objects\ThreadList.cs" />
+    <Compile Include="Forms\MainForm\AccountDetails\AccountDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\AccountDetails\AccountLogs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\AccountDetails\AccountStatistics.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\TopPanel\DgvAccounts.cs" />
+    <Compile Include="Forms\MainForm\TopPanel\SideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\TopPanel\TopPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\NewSavedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enums\AccountStatus.cs" />
+    <Compile Include="Enums\AutoQuesterModes.cs" />
+    <Compile Include="Enums\CauldronActions.cs" />
+    <Compile Include="Enums\CondType.cs" />
+    <Compile Include="Enums\MoverStatus.cs" />
+    <Compile Include="Enums\PVPResult.cs" />
+    <Compile Include="Enums\RaidResult.cs" />
+    <Compile Include="Enums\SelectedServer.cs" />
+    <Compile Include="Enums\Servers.cs" />
+    <Compile Include="Enums\Skill.cs" />
+    <Compile Include="Enums\SkillState.cs" />
+    <Compile Include="Enums\Slots.cs" />
+    <Compile Include="Enums\StartModes.cs" />
+    <Compile Include="Enums\WeeklyQuestStatus.cs" />
+    <Compile Include="MyDiscord\CommandHandlingService.cs" />
+    <Compile Include="MyDiscord\DiscordProgram.cs" />
+    <Compile Include="MyDiscord\Modules\CrewStats.cs" />
+    <Compile Include="MyDiscord\Modules\Drops.cs" />
+    <Compile Include="MyDiscord\Modules\Report.cs" />
+    <Compile Include="Objects\Accounts\Account.cs" />
+    <Compile Include="Objects\Accounts\AccountGroup.cs" />
+    <Compile Include="Objects\Accounts\AGaccount.cs" />
+    <Compile Include="Objects\Accounts\Character.cs" />
+    <Compile Include="Objects\Accounts\Condition.cs" />
+    <Compile Include="Objects\Accounts\Equipped.cs" />
+    <Compile Include="Objects\Accounts\Logins.cs" />
+    <Compile Include="Actions\Mover.cs" />
+    <Compile Include="Forms\Support\RGACreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Support\RGAFiller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Objects\Accounts\Step.cs" />
+    <Compile Include="Objects\BossSession.cs" />
+    <Compile Include="Objects\DGVStyles.cs" />
+    <Compile Include="Objects\MyProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objects\PVPTarget.cs" />
+    <Compile Include="Objects\Item.cs" />
+    <Compile Include="Objects\Lists.cs" />
+    <Compile Include="Objects\Accounts\Login.cs" />
+    <Compile Include="Objects\Accounts\RGA.cs" />
+    <Compile Include="Objects\Accounts\RGAGroup.cs" />
+    <Compile Include="Actions\TokensCollector.cs" />
+    <Compile Include="Enums\RaidType.cs" />
+    <Compile Include="Objects\TokensStatus.cs" />
+    <Compile Include="Actions\Trader.cs" />
+    <Compile Include="Objects\Trustee.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Auth\Authenticate.cs" />
+    <Compile Include="Auth\Rank.cs" />
+    <Compile Include="Objects\Area.cs" />
+    <Compile Include="Objects\AttackMob.cs" />
+    <Compile Include="Objects\Boss.cs" />
+    <Compile Include="Actions\Cauldron.cs" />
+    <Compile Include="Objects\CauldronItem.cs" />
+    <Compile Include="Objects\cItem.cs" />
+    <Compile Include="Objects\Enhancement.cs" />
+    <Compile Include="Objects\Enhancer.cs" />
+    <Compile Include="Objects\JunkItem.cs" />
+    <Compile Include="Objects\MappedRoom.cs" />
+    <Compile Include="Objects\Mob.cs" />
+    <Compile Include="Assistance\PathFinder.cs" />
+    <Compile Include="Objects\Quest.cs" />
+    <Compile Include="Objects\QuestItem.cs" />
+    <Compile Include="Objects\QuestItemJson.cs" />
+    <Compile Include="Objects\Room.cs" />
+    <Compile Include="Objects\Set.cs" />
+    <Compile Include="Objects\SetRaids.cs" />
+    <Compile Include="Objects\SetRaidMob.cs" />
+    <Compile Include="Objects\SpecialStep.cs" />
+    <Compile Include="Objects\TraderItemsGroup.cs" />
+    <Compile Include="Objects\Zone.cs" />
+    <Compile Include="StartUp\Updater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assistance\images\happiness_loading.gif" />
+    <Content Include="imageIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\Debug\Files\lastModified" />
+    <None Include="bin\Debug\InfiniteOW.exe" />
+    <None Include="bin\Debug\InfiniteOW.exe.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\ILMerge.3.0.29\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILMerge.3.0.29\build\ILMerge.props'))" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="AForge.Imaging" Version="2.2.5" />
+    <PackageReference Include="Discord.Net" Version="2.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Obfuscar" Version="2.2.31">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Tesseract.Net.SDK" Version="1.20.342" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Target Name="ILMerge">
+    <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
+    <Exec Command="$(ILMergeConsolePath) bin\Debug\InfiniteOW.exe  /out:InfiniteOW.exe bin\Debug\Newtonsoft.Json.dll" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="; Move all assemblies and related files to lib folder&#xD;&#xA;ROBOCOPY &quot;$(TargetDir) &quot; &quot;$(TargetDir)lib\ &quot; /XF *.exe *.config *.manifest *.nupkg *.pdb /XD lib Data Files  /E /IS /MOVE&#xD;&#xA;if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25" />
+  </Target>
+</Project>
